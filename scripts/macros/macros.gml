@@ -1,0 +1,9 @@
+#macro LEVEL_LAYER layer_get_id("LEVEL_LAYER")
+
+enum TOOL {
+	MOVE_CAMERA,
+	EDIT,
+	FILL,
+	MANIPULATE_OBJECT,
+	CONFIGURE
+}
