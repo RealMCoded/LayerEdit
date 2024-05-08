@@ -55,7 +55,8 @@ switch current_tool
 	} break;
 	
 	default:
-
+		var _sidebar_title = "INVALID ITEM"
+		var _sidebar_description = "Somehow you are seeing this even though it should never happen.\n\nGet your sceenshots while you can."
 	break;
 }
 
