@@ -1,15 +1,13 @@
 {
   "$GMObject":"",
-  "%Name":"tile",
-  "eventList":[
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-  ],
+  "%Name":"EDITOR_player_spawn",
+  "eventList":[],
   "managed":true,
-  "name":"tile",
+  "name":"EDITOR_player_spawn",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"Editor Tiles",
+    "path":"folders/Editor Tiles.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -30,8 +28,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_exampleTile",
-    "path":"sprites/spr_exampleTile/spr_exampleTile.yy",
+    "name":"spr_editor_player_spawn",
+    "path":"sprites/spr_editor_player_spawn/spr_editor_player_spawn.yy",
   },
   "spriteMaskId":null,
   "visible":true,

@@ -2,17 +2,17 @@
 gridsnap = 16
 
 tiles = [
+	EDITOR_player_spawn,
 	EDITOR_ground_tile,
-	tile
-	
+	EDITOR_box
 ]
 
 tiles_locale = [
+	"Player Spawn",
 	"Ground Tile",
-	"Testing Tile"
 ]
 
-tool_edit_selected_tile = tiles[0]
+tool_edit_selected_tile = tiles[1]
 tool_config_selected_tile = noone
 
 mouse_in_editor = false
