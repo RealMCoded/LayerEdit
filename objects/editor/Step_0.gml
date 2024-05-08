@@ -11,8 +11,14 @@ var _newH = clamp(_lerpH, 0, 720);
 var _newW = _newH * (1280 / 720);
 camera_set_view_size(view_camera[0], _newW, _newH);
 
+var _mouseDown;
+if current_tool == TOOL.MOVE_CAMERA
+	_mouseDown = mouse_check_button(mb_left)
+else
+	_mouseDown = mouse_check_button(mb_middle)
+
 if (!camera_mouse_drag) {
-	   if (mouse_check_button(mb_middle)) {
+	   if (_mouseDown) {
 	      camera_mouse_drag = true;
 		  var _viewX = camera_get_view_x(view_camera[0]);
 		  var _viewY = camera_get_view_y(view_camera[0]);
@@ -27,7 +33,7 @@ if (!camera_mouse_drag) {
 	   
 	   camera_set_view_pos(view_camera[0], _x, _y)
 	   
-	   if (!mouse_check_button(mb_middle)) {
+	   if (!_mouseDown) {
 	      camera_mouse_drag = false;
 	   }
 	}
