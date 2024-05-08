@@ -33,7 +33,12 @@ function draw_item_select()
 		
 		draw_sprite(spr_hud_btn, tiles[i] == tool_edit_selected_tile, 928+16+renderX, 136+renderY)
 		
-		draw_sprite_ext(_objSprite, 0, 928+32+renderX-sprite_get_xoffset(_objSprite), 136+16+renderY-sprite_get_yoffset(_objSprite), 2, 2, 0, c_white, 1)
+		draw_sprite_ext(_objSprite, 0, 928+32+renderX+(sprite_get_xoffset(_objSprite)*2), 136+16+renderY+(sprite_get_yoffset(_objSprite)*2), 2, 2, 0, c_white, 1)
+		
+		if mouse_check_button_pressed(mb_left) and point_in_rectangle(window_mouse_x, window_mouse_y, 928+16+renderX, 136+renderY, 928+16+renderX+64, 136+renderY+64)
+		{
+			tool_edit_selected_tile = tiles[i]
+		}
 	}
 }
 
@@ -56,6 +61,7 @@ switch current_tool
 	{
 		var _sidebar_title = "Fill Tool"
 		var _sidebar_description = "Fill an area with a selected tile."
+		draw_item_select()
 	} break;
 	
 	case TOOL.MANIPULATE_OBJECT:
