@@ -1,7 +1,5 @@
 /// @description HUD
-
 draw_set_color(c_black)
-draw_text(32, 64, instance_count)
 
 #region HUD
 draw_sprite_ext(spr_hud, 0, 0, 0, 18.28, 1.96, 0, c_white, 1)
@@ -31,10 +29,11 @@ function draw_item_select()
 	{
 		var renderX = 64*((i%rows)*seperate)
 		var renderY = 64*(floor(i/rows)*seperate)
+		var _objSprite = object_get_sprite(tiles[i])
 		
 		draw_sprite(spr_hud_btn, tiles[i] == tool_edit_selected_tile, 928+16+renderX, 136+renderY)
 		
-		draw_sprite_ext(object_get_sprite(tiles[i]), 0, 928+32+renderX, 136+16+renderY, 2, 2, 0, c_white, 1)
+		draw_sprite_ext(_objSprite, 0, 928+32+renderX-sprite_get_xoffset(_objSprite), 136+16+renderY-sprite_get_yoffset(_objSprite), 2, 2, 0, c_white, 1)
 	}
 }
 
