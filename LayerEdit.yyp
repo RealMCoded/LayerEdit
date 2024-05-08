@@ -11,9 +11,9 @@
   "defaultScriptType":1,
   "Folders":[
     {"$GMFolder":"","%Name":"Animation Curves","folderPath":"folders/Animation Curves.yy","name":"Animation Curves","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"Editor Tiles","folderPath":"folders/Editor Tiles.yy","name":"Editor Tiles","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Extensions","folderPath":"folders/Extensions.yy","name":"Extensions","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Fonts","folderPath":"folders/Fonts.yy","name":"Fonts","resourceType":"GMFolder","resourceVersion":"2.0",},
-    {"$GMFolder":"","%Name":"Editor Tiles","folderPath":"folders/Editor Tiles.yy","name":"Editor Tiles","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Notes","folderPath":"folders/Notes.yy","name":"Notes","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Objects","folderPath":"folders/Objects.yy","name":"Objects","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Particle Systems","folderPath":"folders/Particle Systems.yy","name":"Particle Systems","resourceType":"GMFolder","resourceVersion":"2.0",},
@@ -50,6 +50,7 @@
     {"id":{"name":"spr_cursor_place","path":"sprites/spr_cursor_place/spr_cursor_place.yy",},},
     {"id":{"name":"spr_editor_ground_tile","path":"sprites/spr_editor_ground_tile/spr_editor_ground_tile.yy",},},
     {"id":{"name":"spr_exampleTile","path":"sprites/spr_exampleTile/spr_exampleTile.yy",},},
+    {"id":{"name":"spr_hud_btn","path":"sprites/spr_hud_btn/spr_hud_btn.yy",},},
     {"id":{"name":"spr_hud","path":"sprites/spr_hud/spr_hud.yy",},},
     {"id":{"name":"spr_tileset","path":"sprites/spr_tileset/spr_tileset.yy",},},
     {"id":{"name":"spr_tools","path":"sprites/spr_tools/spr_tools.yy",},},

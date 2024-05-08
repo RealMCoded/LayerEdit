@@ -22,6 +22,22 @@ var _sidebar_description = "Sidebar descriptions can be quite long, but please k
 
 draw_sprite_ext(spr_hud, 0, 928, 0, 7.08, 14.44, 0, c_white, 1)
 
+function draw_item_select()
+{
+	var seperate = 1.25
+	var rows = 4
+	
+	for(var i=0; i < array_length(tiles); i++)
+	{
+		var renderX = 64*((i%rows)*seperate)
+		var renderY = 64*(floor(i/rows)*seperate)
+		
+		draw_sprite(spr_hud_btn, tiles[i] == tool_edit_selected_tile, 928+16+renderX, 136+renderY)
+		
+		draw_sprite_ext(object_get_sprite(tiles[i]), 0, 928+32+renderX, 136+16+renderY, 2, 2, 0, c_white, 1)
+	}
+}
+
 switch current_tool
 {
 	case TOOL.MOVE_CAMERA:
@@ -34,6 +50,7 @@ switch current_tool
 	{
 		var _sidebar_title = "Draw Tool"
 		var _sidebar_description = "Place with LMB, Delete with RMB."
+		draw_item_select()
 	} break;
 	
 	case TOOL.FILL:
