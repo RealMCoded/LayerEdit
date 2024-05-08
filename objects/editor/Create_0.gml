@@ -4,6 +4,12 @@ gridsnap = 16
 tiles = [
 	EDITOR_ground_tile,
 	tile
+	
+]
+
+tiles_locale = [
+	"Ground Tile",
+	"Testing Tile"
 ]
 
 tool_edit_selected_tile = tiles[0]
@@ -15,7 +21,11 @@ current_tool = TOOL.EDIT
 
 current_level = {
 	width: 320,
-	height: 240
+	height: 240,
+	name: "My Level ",
+	creator: "Layerformer Player",
+	background: 0,
+	backgroundcolor: make_color_hsv(255, 255, 255)
 }
 
 camera_mouse_x = -1
