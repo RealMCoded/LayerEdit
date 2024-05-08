@@ -49,7 +49,7 @@ if mouse_in_editor
 		{
 			if !instance_position(floor(mouse_x/gridsnap) * gridsnap, floor(mouse_y/gridsnap) * gridsnap, all)
 			{
-				instance_create_layer(floor(mouse_x/gridsnap) * gridsnap, floor(mouse_y/gridsnap) * gridsnap, LEVEL_LAYER, tile)
+				instance_create_layer(floor(mouse_x/gridsnap) * gridsnap, floor(mouse_y/gridsnap) * gridsnap, LEVEL_LAYER, tool_edit_selected_tile)
 			}
 		}
 
