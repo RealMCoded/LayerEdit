@@ -11,5 +11,5 @@ for(var i=0; i<= room_width; i+=gridsnap) {
 
 draw_rectangle_color(0, 0, room_width, room_height, c_red, c_red, c_red, c_red, true)
 
-draw_sprite(spr_exampleTile, 0, floor(mouse_x/gridsnap) * gridsnap, floor(mouse_y/gridsnap) * gridsnap)
+if mouse_in_editor draw_sprite(spr_exampleTile, 0, floor(mouse_x/gridsnap) * gridsnap, floor(mouse_y/gridsnap) * gridsnap)
 draw_text_color(8, 8, $"{room_width}x{room_height}", c_white, c_white, c_white, c_white, 0.25)
