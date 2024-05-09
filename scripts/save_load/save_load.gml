@@ -36,5 +36,27 @@ function save_level(_data)
 
 function load_level(_file)
 {
-	return 0
+	var _buffer = buffer_load(_file)
+	var _string = buffer_read(_buffer, buffer_string)
+	buffer_delete(_buffer)
+	
+	var _data = json_parse(_string)
+	
+	editor.current_level = _data.level_info
+	
+	//loading tiles
+	
+	var _instance_count = array_length(_data.tiles)
+	
+	for(var i=0; i < _instance_count; i++)
+	{
+		var _tile = _data.tiles[i]
+		var obj = asset_get_index(_tile.tile)
+		
+		instance_create_layer(_tile.x, _tile.y, LEVEL_LAYER, obj, {
+			image_angle: _tile.rotation,
+			image_xscale: _tile.xscale,
+			image_yscale: _tile.yscale
+		})
+	}
 }

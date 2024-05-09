@@ -98,7 +98,13 @@ else
 		
 		if point_in_rectangle(window_mouse_x, window_mouse_y, 400, 16, 400+50, 82) //Button 7 - Option Load
 		{
-			
+			var _file = get_open_filename_ext("Layerformer Level (.lf)|*.lf", "", "%appdata%\\Layerformer\\Levels", "Select a Layerformer Level File");
+			if _file != ""
+			{
+				load_level(_file)
+				room_width = current_level.width
+				room_height = current_level.height
+			}
 		}
 		
 		if point_in_rectangle(window_mouse_x, window_mouse_y, 464, 16, 464+50, 82) //Button 8 - Option Test
