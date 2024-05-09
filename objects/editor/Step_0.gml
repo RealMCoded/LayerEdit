@@ -66,29 +66,49 @@ else
 {
 	if mouse_check_button_pressed(mb_left)
 	{
-		if point_in_rectangle(window_mouse_x, window_mouse_y, 16, 16, 66, 82) //Button 1
+		if point_in_rectangle(window_mouse_x, window_mouse_y, 16, 16, 66, 82) //Button 1 - Tool Camera
 		{
 			current_tool = TOOL.MOVE_CAMERA
 		}
 		
-		if point_in_rectangle(window_mouse_x, window_mouse_y, 80, 16, 80+50, 82) //Button 2
+		if point_in_rectangle(window_mouse_x, window_mouse_y, 80, 16, 80+50, 82) //Button 2 - Tool Edit
 		{
 			current_tool = TOOL.EDIT
 		}
 		
-		if point_in_rectangle(window_mouse_x, window_mouse_y, 144, 16, 144+50, 82) //Button 3
+		if point_in_rectangle(window_mouse_x, window_mouse_y, 144, 16, 144+50, 82) //Button 3 - Tool Fill
 		{
 			current_tool = TOOL.FILL
 		}
 		
-		if point_in_rectangle(window_mouse_x, window_mouse_y, 208, 16, 208+50, 82) //Button 4
+		if point_in_rectangle(window_mouse_x, window_mouse_y, 208, 16, 208+50, 82) //Button 4 - Tool Manipulate
 		{
 			current_tool = TOOL.MANIPULATE_OBJECT
 		}
 		
-		if point_in_rectangle(window_mouse_x, window_mouse_y, 272, 16, 272+50, 82) //Button 5
+		if point_in_rectangle(window_mouse_x, window_mouse_y, 272, 16, 272+50, 82) //Button 5 - Tool Configure
 		{
 			current_tool = TOOL.CONFIGURE
+		}
+		
+		if point_in_rectangle(window_mouse_x, window_mouse_y, 336, 16, 336+50, 82) //Button 6 - Option Save
+		{
+			save_level(current_level)
+		}
+		
+		if point_in_rectangle(window_mouse_x, window_mouse_y, 400, 16, 400+50, 82) //Button 7 - Option Load
+		{
+			
+		}
+		
+		if point_in_rectangle(window_mouse_x, window_mouse_y, 464, 16, 464+50, 82) //Button 8 - Option Test
+		{
+			
+		}
+		
+		if point_in_rectangle(window_mouse_x, window_mouse_y, 528, 16, 528+50, 82) //Button 9 - Option Help
+		{
+			
 		}
 	}
 }
