@@ -1,4 +1,6 @@
 /// @description 
+show_debug_log(debug_mode)
+
 gridsnap = 16
 
 tiles = [
