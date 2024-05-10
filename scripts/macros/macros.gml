@@ -4,6 +4,7 @@
 #macro TARGET_GAME_VERSION "X.X.X"
 
 //Shortcut macros
+#macro LAYERFORMER_LEVEL_DIR $"{environment_get_variable("APPDATA")}\\Layerformer\\Levels"
 #macro LEVEL_LAYER layer_get_id("LEVEL_LAYER")
 #macro window_mouse_x window_mouse_get_x()
 #macro window_mouse_y window_mouse_get_y()
