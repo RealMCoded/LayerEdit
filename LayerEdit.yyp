@@ -31,6 +31,7 @@
     {"id":{"name":"EDITOR_ground_tile","path":"objects/EDITOR_ground_tile/EDITOR_ground_tile.yy",},},
     {"id":{"name":"EDITOR_player_spawn","path":"objects/EDITOR_player_spawn/EDITOR_player_spawn.yy",},},
     {"id":{"name":"editor","path":"objects/editor/editor.yy",},},
+    {"id":{"name":"filler","path":"objects/filler/filler.yy",},},
     {"id":{"name":"rm_editor","path":"rooms/rm_editor/rm_editor.yy",},},
     {"id":{"name":"ui_mockup","path":"rooms/ui_mockup/ui_mockup.yy",},},
     {"id":{"name":"macros","path":"scripts/macros/macros.yy",},},
