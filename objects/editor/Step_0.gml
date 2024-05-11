@@ -114,7 +114,7 @@ else
 		
 		if point_in_rectangle(window_mouse_x, window_mouse_y, 528, 16, 528+50, 82) //Button 9 - Option Help
 		{
-			
+			show_message($"LayerEdit v{version}\nCompiled on {buildDate}")
 		}
 	}
 }
