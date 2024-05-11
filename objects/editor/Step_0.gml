@@ -122,6 +122,7 @@ else
 					if _me == editor || _me == camera break;
 					instance_destroy()
 				}
+				
 				load_level(_file)
 				room_width = current_level.width
 				room_height = current_level.height

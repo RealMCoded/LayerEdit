@@ -11,6 +11,7 @@ tiles = [
 tiles_locale = [
 	"Player Spawn",
 	"Ground Tile",
+	"Box"
 ]
 
 tool_edit_selected_tile = tiles[1]
@@ -20,10 +21,14 @@ mouse_in_editor = false
 
 current_tool = TOOL.EDIT
 
+var _date = string_replace_all(date_date_string(date_current_datetime()), "/", "-")
+
+var _time = string_replace_all(date_time_string(date_current_datetime()), ":", ".")
+
 current_level = {
 	width: 320,
 	height: 240,
-	name: "My Level",
+	name: $"Unamed Level {_date} {_time}",
 	creator: "Layerformer Player",
 	background: 0,
 	backgroundcolor: make_color_hsv(255, 255, 255)
