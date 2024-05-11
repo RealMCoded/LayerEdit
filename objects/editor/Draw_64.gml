@@ -4,11 +4,11 @@ draw_set_color(c_black)
 #region HUD
 draw_sprite_ext(spr_hud, 0, 0, 0, 18.28, 1.96, 0, c_white, 1)
 
-for(var i=0; i < 9; i++)
+for(var i=0; i < 10; i++)
 {
 	draw_sprite_ext(spr_hud, 0, 16 + (i * 64), 16, 1.3, 1.3, 0, c_white, 1)
 	draw_sprite(spr_tools, i, 32 + (i * 64), 32)
-	//draw_text(16 + (i * 64), 16, 16 + (i * 64))
+	draw_text(16 + (i * 64), 16, 16 + (i * 64))
 }
 
 #endregion
@@ -72,8 +72,14 @@ switch current_tool
 	
 	case TOOL.CONFIGURE:
 	{
-		var _sidebar_title = "Configure Tool"
-		var _sidebar_description = "Configure tiles or the level."
+		var _sidebar_title = "Tile Edit Tool"
+		var _sidebar_description = "Click on a tile to configure it."
+	} break;
+	
+	case TOOL.CONFIGURE_LEVEL:
+	{
+		var _sidebar_title = "Configure Level"
+		var _sidebar_description = "Configure your level."
 	} break;
 	
 	case TOOL.HELP_MENU:

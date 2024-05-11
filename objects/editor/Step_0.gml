@@ -102,12 +102,17 @@ else
 			current_tool = TOOL.CONFIGURE
 		}
 		
-		if point_in_rectangle(window_mouse_x, window_mouse_y, 336, 16, 336+50, 82) //Button 6 - Option Save
+		if point_in_rectangle(window_mouse_x, window_mouse_y, 336, 16, 336+50, 82) //Button 6 - Tool Configure Level
+		{
+			current_tool = TOOL.CONFIGURE_LEVEL
+		}
+		
+		if point_in_rectangle(window_mouse_x, window_mouse_y, 400, 16, 400+50, 82) //Button 7 - Option Save
 		{
 			save_level(current_level)
 		}
 		
-		if point_in_rectangle(window_mouse_x, window_mouse_y, 400, 16, 400+50, 82) //Button 7 - Option Load
+		if point_in_rectangle(window_mouse_x, window_mouse_y, 464, 16, 464+50, 82) //Button 8 - Option Load
 		{
 			var _file = get_open_filename_ext("Layerformer Level (.lf)|*.lf", "", LAYERFORMER_LEVEL_DIR, "Select a Layerformer Level File");
 			if _file != ""
@@ -118,12 +123,12 @@ else
 			}
 		}
 		
-		if point_in_rectangle(window_mouse_x, window_mouse_y, 464, 16, 464+50, 82) //Button 8 - Option Test
+		if point_in_rectangle(window_mouse_x, window_mouse_y, 528, 16, 528+50, 82) //Button 9 - Option Test
 		{
 			
 		}
 		
-		if point_in_rectangle(window_mouse_x, window_mouse_y, 528, 16, 528+50, 82) //Button 9 - Option Help
+		if point_in_rectangle(window_mouse_x, window_mouse_y, 592, 16, 592+50, 82) //Button 10 - Option Help
 		{
 			current_tool = TOOL.HELP_MENU
 		}

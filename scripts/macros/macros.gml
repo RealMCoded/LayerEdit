@@ -17,5 +17,6 @@ enum TOOL {
 	FILL,
 	MANIPULATE_OBJECT,
 	CONFIGURE,
+	CONFIGURE_LEVEL,
 	HELP_MENU //due to how the sidebar works it has to be a tool
 }
