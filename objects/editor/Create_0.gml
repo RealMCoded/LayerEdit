@@ -24,7 +24,7 @@ current_tool = TOOL.EDIT
 current_level = {
 	width: 320,
 	height: 240,
-	name: "My Level ",
+	name: "My Level",
 	creator: "Layerformer Player",
 	background: 0,
 	backgroundcolor: make_color_hsv(255, 255, 255)

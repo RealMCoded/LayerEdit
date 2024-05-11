@@ -26,11 +26,13 @@ function save_level(_data)
 		}
 	}
 	
+	var _file_name = generateLevelFileName(_level.level_info.name)
+	directory_create($"{LAYERFORMER_LEVEL_DIR}\\{_file_name}")
+	
 	var _string = json_stringify(_level)
 	var _buffer = buffer_create(string_byte_length(_string)+1, buffer_fixed, 1)
 	buffer_write(_buffer, buffer_string, _string)
-	buffer_save(_buffer, "testing.lf")
-	
+	buffer_save(_buffer, $"{LAYERFORMER_LEVEL_DIR}\\{_file_name}\\level.lf")
 	return 1
 }
 
@@ -59,4 +61,10 @@ function load_level(_file)
 			image_yscale: _tile.yscale
 		})
 	}
+}
+
+function generateLevelFileName(str) {
+	var replaceSpace = "SPACECHARACTERTHISNAMEISLONGSONOONETYPESITBYMISTAKE"
+	str = string_replace_all(str, " ", replaceSpace)
+	return string_lower(string_replace_all(string_lettersdigits(str), replaceSpace, "_"))
 }
