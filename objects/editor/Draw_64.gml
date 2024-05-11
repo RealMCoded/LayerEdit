@@ -8,7 +8,7 @@ for(var i=0; i < 9; i++)
 {
 	draw_sprite_ext(spr_hud, 0, 16 + (i * 64), 16, 1.3, 1.3, 0, c_white, 1)
 	draw_sprite(spr_tools, i, 32 + (i * 64), 32)
-	draw_text(16 + (i * 64), 16, 16 + (i * 64))
+	//draw_text(16 + (i * 64), 16, 16 + (i * 64))
 }
 
 #endregion
@@ -76,6 +76,12 @@ switch current_tool
 		var _sidebar_description = "Configure tiles or the level."
 	} break;
 	
+	case TOOL.HELP_MENU:
+	{
+		var _sidebar_title = "LayerEdit Help"
+		var _sidebar_description = $"LayerEdit v{version}\nCompiled on {buildDate}\n\nThis is a placeholder help sidebar.\nIt will become a popup later :)"
+	} break;
+	
 	default:
 		var _sidebar_title = "INVALID ITEM"
 		var _sidebar_description = "Somehow you are seeing this even though it should never happen.\n\nGet your sceenshots while you can."
@@ -87,3 +93,5 @@ draw_line_width_color(_originX+16, 64-8, 1280-20, 64-8, 1, c_black, c_black)
 draw_text_ext(_originX+8, 64 + 6, _sidebar_description, 16, 7 * 50)
 
 #endregion
+
+draw_text(8, 8, instance_count)
