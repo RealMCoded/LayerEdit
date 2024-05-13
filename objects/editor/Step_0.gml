@@ -24,13 +24,13 @@ if (!camera_mouse_drag) {
 		  var _viewX = camera_get_view_x(view_camera[0]);
 		  var _viewY = camera_get_view_y(view_camera[0]);
 		  
-	      camera_mouse_x = _viewX - -window_mouse_get_x();
-	      camera_mouse_y = _viewY - -window_mouse_get_y();
+	      camera_mouse_x = _viewX - -window_mouse_get_x()*camera_zoom;
+	      camera_mouse_y = _viewY - -window_mouse_get_y()*camera_zoom;
 
 	   }
 	} else {
-	   var _x = -window_mouse_get_x() + camera_mouse_x;
-	   var _y = -window_mouse_get_y() + camera_mouse_y
+	   var _x = -window_mouse_get_x()*camera_zoom + camera_mouse_x;
+	   var _y = -window_mouse_get_y()*camera_zoom + camera_mouse_y
 	   
 	   camera_set_view_pos(view_camera[0], _x, _y)
 	   
