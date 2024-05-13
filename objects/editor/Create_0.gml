@@ -38,3 +38,5 @@ camera_mouse_x = -1
 camera_mouse_y = -1
 camera_zoom = 1
 camera_mouse_drag = false
+
+camera_set_view_pos(view_camera[0], -room_width, -room_height)
