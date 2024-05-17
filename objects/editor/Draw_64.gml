@@ -95,6 +95,17 @@ switch current_tool
 		}
 		#endregion
 		
+		if instance_exists(tool_config_selected_tile)
+		{
+			var _inst = tool_config_selected_tile
+			var _name = string_replace_all(object_get_name(_inst.object_index), "EDITOR_", "")
+			_name = string_replace_all(_name, "_", " ")
+			
+			draw_text_ext(_originX+8, 210, $"{_name}\n\nid {_inst.id}\nx: {_inst.x}\ny: {_inst.y}\nxscale: {_inst.image_xscale}\nyscale: {_inst.image_yscale}\nrotation: {_inst.image_angle}", 16, 7 * 50)
+		} else {
+			draw_text_ext(_originX+8, 210, "No instance selected.\nClick on one to select it.", 16, 7 * 50)
+		}
+		
 	} break;
 	
 	case TOOL.CONFIGURE:
