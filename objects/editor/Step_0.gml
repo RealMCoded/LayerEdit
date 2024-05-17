@@ -104,6 +104,18 @@ if mouse_in_editor
 				{
 					tool_config_selected_tile.image_xscale += _m_x
 					tool_config_selected_tile.image_yscale += _m_y
+					
+					if tool_config_selected_tile.image_xscale == 0
+					{
+						if _m_x == -1 tool_config_selected_tile.image_xscale = -1
+						if _m_x == 1 tool_config_selected_tile.image_xscale = 1
+					}
+					
+					if tool_config_selected_tile.image_yscale == 0
+					{
+						if _m_y == -1 tool_config_selected_tile.image_yscale = -1
+						if _m_y == 1 tool_config_selected_tile.image_yscale = 1
+					}
 				} break;
 			}
 		}
