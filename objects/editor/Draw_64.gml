@@ -67,7 +67,7 @@ switch current_tool
 	case TOOL.MANIPULATE_OBJECT:
 	{
 		var _sidebar_title = "Manipulation Tool"
-		var _sidebar_description = "Move, rotate, and scale tiles."
+		var _sidebar_description = "Move, rotate, and scale tiles.\n\nArrow keys :3 :3 :3"
 		
 		#region draw tools
 

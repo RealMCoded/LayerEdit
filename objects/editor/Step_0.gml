@@ -79,8 +79,32 @@ if mouse_in_editor
 			if instance_position(floor(mouse_x/gridsnap) * gridsnap, floor(mouse_y/gridsnap) * gridsnap, all)
 			{
 				tool_config_selected_tile = instance_position(floor(mouse_x/gridsnap) * gridsnap, floor(mouse_y/gridsnap) * gridsnap, all)
-				show_debug_message(current_tool_manipulate)
-				show_debug_message(tool_config_selected_tile)
+			}
+		}
+		
+		if instance_exists(tool_config_selected_tile)
+		{
+			var _move_up = -keyboard_check_pressed(vk_up)
+			var _move_down = keyboard_check_pressed(vk_down)
+			var _move_left = -keyboard_check_pressed(vk_left)
+			var _move_right = keyboard_check_pressed(vk_right)
+			
+			var _m_y = _move_up + _move_down
+			var _m_x = _move_left + _move_right
+				
+			switch current_tool_manipulate
+			{
+				case MANIPULATE_TOOL.MOVE:
+				{
+					tool_config_selected_tile.x += _m_x * gridsnap
+					tool_config_selected_tile.y += _m_y * gridsnap
+				} break;
+					
+				case MANIPULATE_TOOL.SCALE:
+				{
+					tool_config_selected_tile.image_xscale += _m_x
+					tool_config_selected_tile.image_yscale += _m_y
+				} break;
 			}
 		}
 	}
