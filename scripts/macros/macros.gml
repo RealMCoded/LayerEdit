@@ -20,3 +20,9 @@ enum TOOL {
 	CONFIGURE_LEVEL,
 	HELP_MENU //due to how the sidebar works it has to be a tool
 }
+
+enum MANIPULATE_TOOL {
+	MOVE,
+	ROTATE,
+	SCALE
+}

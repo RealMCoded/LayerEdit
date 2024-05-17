@@ -20,6 +20,7 @@ tool_config_selected_tile = noone
 mouse_in_editor = false
 
 current_tool = TOOL.EDIT
+current_tool_manipulate = MANIPULATE_TOOL.MOVE
 
 var _date = string_replace_all(date_date_string(date_current_datetime()), "/", "-")
 

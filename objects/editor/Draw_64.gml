@@ -68,6 +68,33 @@ switch current_tool
 	{
 		var _sidebar_title = "Manipulation Tool"
 		var _sidebar_description = "Move, rotate, and scale tiles."
+		
+		#region draw tools
+
+		var seperate = 1.25
+		var rows = 4
+		var tools = [
+			MANIPULATE_TOOL.MOVE,
+			MANIPULATE_TOOL.ROTATE,
+			MANIPULATE_TOOL.SCALE,
+		]
+	
+		for(var i=0; i < array_length(tools); i++)
+		{
+			var renderX = 64*((i%rows)*seperate)
+			var renderY = 64*(floor(i/rows)*seperate)
+		
+			draw_sprite(spr_hud_btn, tools[i] == current_tool_manipulate, 928+16+renderX, 136+renderY)
+		
+			draw_sprite_ext(spr_tools_manipulate, i, 928+32+renderX, 136+16+renderY, 1, 1, 0, c_white, 1)
+		
+			if mouse_check_button_pressed(mb_left) and point_in_rectangle(window_mouse_x, window_mouse_y, 928+16+renderX, 136+renderY, 928+16+renderX+64, 136+renderY+64)
+			{
+				current_tool_manipulate = tools[i]
+			}
+		}
+		#endregion
+		
 	} break;
 	
 	case TOOL.CONFIGURE:

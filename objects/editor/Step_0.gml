@@ -72,6 +72,18 @@ if mouse_in_editor
 			}
 		}
 	}
+	else if current_tool == TOOL.MANIPULATE_OBJECT
+	{
+		if mouse_check_button_pressed(mb_left)
+		{
+			if instance_position(floor(mouse_x/gridsnap) * gridsnap, floor(mouse_y/gridsnap) * gridsnap, all)
+			{
+				tool_config_selected_tile = instance_position(floor(mouse_x/gridsnap) * gridsnap, floor(mouse_y/gridsnap) * gridsnap, all)
+				show_debug_message(current_tool_manipulate)
+				show_debug_message(tool_config_selected_tile)
+			}
+		}
+	}
 } 
 else
 {
