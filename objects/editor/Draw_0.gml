@@ -16,3 +16,11 @@ draw_rectangle_color(0, 0, room_width, room_height, c_red, c_red, c_red, c_red, 
 if mouse_in_editor && current_tool == TOOL.EDIT draw_sprite_ext(object_get_sprite(tool_edit_selected_tile), 0, floor(mouse_x/gridsnap) * gridsnap, floor(mouse_y/gridsnap) * gridsnap, 1, 1, 0, c_white, 0.5)
 
 draw_text_color(0, -24, $"{room_width}x{room_height}", c_white, c_white, c_white, c_white, 0.25)
+
+if instance_exists(tool_config_selected_tile)
+{
+	with tool_config_selected_tile
+	{
+		draw_rectangle_color(x, y, x+(image_xscale*16)-1, y+(image_yscale*16)-1, c_red, c_red, c_red, c_red, true)
+	}
+}
