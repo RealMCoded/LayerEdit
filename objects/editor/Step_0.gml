@@ -81,44 +81,6 @@ if mouse_in_editor
 				tool_config_selected_tile = instance_position(floor(mouse_x/gridsnap) * gridsnap, floor(mouse_y/gridsnap) * gridsnap, all)
 			}
 		}
-		
-		if instance_exists(tool_config_selected_tile)
-		{
-			var _move_up = -keyboard_check_pressed(vk_up)
-			var _move_down = keyboard_check_pressed(vk_down)
-			var _move_left = -keyboard_check_pressed(vk_left)
-			var _move_right = keyboard_check_pressed(vk_right)
-			
-			var _m_y = _move_up + _move_down
-			var _m_x = _move_left + _move_right
-				
-			switch current_tool_manipulate
-			{
-				case MANIPULATE_TOOL.MOVE:
-				{
-					tool_config_selected_tile.x += _m_x * gridsnap
-					tool_config_selected_tile.y += _m_y * gridsnap
-				} break;
-					
-				case MANIPULATE_TOOL.SCALE:
-				{
-					tool_config_selected_tile.image_xscale += _m_x
-					tool_config_selected_tile.image_yscale += _m_y
-					
-					if tool_config_selected_tile.image_xscale == 0
-					{
-						if _m_x == -1 tool_config_selected_tile.image_xscale = -1
-						if _m_x == 1 tool_config_selected_tile.image_xscale = 1
-					}
-					
-					if tool_config_selected_tile.image_yscale == 0
-					{
-						if _m_y == -1 tool_config_selected_tile.image_yscale = -1
-						if _m_y == 1 tool_config_selected_tile.image_yscale = 1
-					}
-				} break;
-			}
-		}
 	}
 } 
 else
@@ -127,16 +89,19 @@ else
 	{
 		if point_in_rectangle(window_mouse_x, window_mouse_y, 16, 16, 66, 82) //Button 1 - Tool Camera
 		{
+			tool_config_selected_tile = noone
 			current_tool = TOOL.MOVE_CAMERA
 		}
 		
 		if point_in_rectangle(window_mouse_x, window_mouse_y, 80, 16, 80+50, 82) //Button 2 - Tool Edit
 		{
+			tool_config_selected_tile = noone
 			current_tool = TOOL.EDIT
 		}
 		
 		if point_in_rectangle(window_mouse_x, window_mouse_y, 144, 16, 144+50, 82) //Button 3 - Tool Fill
 		{
+			tool_config_selected_tile = noone
 			current_tool = TOOL.FILL
 		}
 		
@@ -152,12 +117,16 @@ else
 		
 		if point_in_rectangle(window_mouse_x, window_mouse_y, 336, 16, 336+50, 82) //Button 6 - Tool Configure Level
 		{
+			tool_config_selected_tile = noone
 			current_tool = TOOL.CONFIGURE_LEVEL
 		}
 		
 		if point_in_rectangle(window_mouse_x, window_mouse_y, 400, 16, 400+50, 82) //Button 7 - Option Save
 		{
-			save_level(current_level)
+			if !instance_exists(EDITOR_player_spawn)
+				show_message("You need to place a player spawn point!")
+			else
+				save_level(current_level)
 		}
 		
 		if point_in_rectangle(window_mouse_x, window_mouse_y, 464, 16, 464+50, 82) //Button 8 - Option Load
@@ -187,4 +156,54 @@ else
 			current_tool = TOOL.HELP_MENU
 		}
 	}
+}
+
+if current_tool == TOOL.MANIPULATE_OBJECT
+{
+if instance_exists(tool_config_selected_tile)
+		{
+			var _move_up = -keyboard_check_pressed(vk_up)
+			var _move_down = keyboard_check_pressed(vk_down)
+			var _move_left = -keyboard_check_pressed(vk_left)
+			var _move_right = keyboard_check_pressed(vk_right)
+			
+			var _m_y = _move_up + _move_down
+			var _m_x = _move_left + _move_right
+				
+			switch current_tool_manipulate
+			{
+				case MANIPULATE_TOOL.MOVE:
+				{
+					tool_config_selected_tile.x += _m_x * gridsnap
+					tool_config_selected_tile.y += _m_y * gridsnap
+				} break;
+				
+				case MANIPULATE_TOOL.ROTATE:
+				{
+					var _rotate = 0
+					
+					_rotate = -15 * _m_x
+					
+					tool_config_selected_tile.image_angle += _rotate
+				} break;
+					
+				case MANIPULATE_TOOL.SCALE:
+				{
+					tool_config_selected_tile.image_xscale += _m_x
+					tool_config_selected_tile.image_yscale += _m_y
+					
+					if tool_config_selected_tile.image_xscale == 0
+					{
+						if _m_x == -1 tool_config_selected_tile.image_xscale = -1
+						if _m_x == 1 tool_config_selected_tile.image_xscale = 1
+					}
+					
+					if tool_config_selected_tile.image_yscale == 0
+					{
+						if _m_y == -1 tool_config_selected_tile.image_yscale = -1
+						if _m_y == 1 tool_config_selected_tile.image_yscale = 1
+					}
+				} break;
+			}
+		}	
 }
