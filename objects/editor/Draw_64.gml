@@ -1,4 +1,5 @@
 /// @description HUD
+gpu_set_tex_mip_filter(tf_anisotropic)
 draw_set_color(c_black)
 
 #region HUD
@@ -139,3 +140,4 @@ draw_text_ext(_originX+8, 64 + 6, _sidebar_description, 16, 7 * 50)
 #endregion
 
 draw_text(8, 8, instance_count)
+gpu_set_tex_mip_filter(tf_point)
