@@ -47,6 +47,7 @@
     {"id":{"name":"spr_exampleTile","path":"sprites/spr_exampleTile/spr_exampleTile.yy",},},
     {"id":{"name":"spr_hud_btn","path":"sprites/spr_hud_btn/spr_hud_btn.yy",},},
     {"id":{"name":"spr_hud","path":"sprites/spr_hud/spr_hud.yy",},},
+    {"id":{"name":"spr_object_outline","path":"sprites/spr_object_outline/spr_object_outline.yy",},},
     {"id":{"name":"spr_tileset","path":"sprites/spr_tileset/spr_tileset.yy",},},
     {"id":{"name":"spr_tools_manipulate","path":"sprites/spr_tools_manipulate/spr_tools_manipulate.yy",},},
     {"id":{"name":"spr_tools","path":"sprites/spr_tools/spr_tools.yy",},},

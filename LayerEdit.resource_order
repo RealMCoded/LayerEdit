@@ -24,6 +24,7 @@
     {"name":"spr_editor_player_spawn","order":1,"path":"sprites/spr_editor_player_spawn/spr_editor_player_spawn.yy",},
     {"name":"spr_exampleTile","order":5,"path":"sprites/spr_exampleTile/spr_exampleTile.yy",},
     {"name":"spr_hud_btn","order":1,"path":"sprites/spr_hud_btn/spr_hud_btn.yy",},
+    {"name":"spr_object_outline","order":12,"path":"sprites/spr_object_outline/spr_object_outline.yy",},
     {"name":"spr_tileset","order":3,"path":"sprites/spr_tileset/spr_tileset.yy",},
     {"name":"spr_tools_manipulate","order":11,"path":"sprites/spr_tools_manipulate/spr_tools_manipulate.yy",},
     {"name":"spr_tools","order":10,"path":"sprites/spr_tools/spr_tools.yy",},
