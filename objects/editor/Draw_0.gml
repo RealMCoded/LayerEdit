@@ -19,6 +19,7 @@ draw_text_color(0, -24, $"{room_width}x{room_height}", c_white, c_white, c_white
 
 if instance_exists(tool_config_selected_tile)
 {
+	var _frame = current_time / 200
 	with tool_config_selected_tile 
-		draw_sprite_ext(spr_object_outline, 0, x, y, image_xscale*2, image_yscale*2, image_angle, c_white, 1)
+		draw_sprite_ext(spr_object_outline, _frame, x, y, image_xscale*2, image_yscale*2, image_angle, c_white, 1)
 }
