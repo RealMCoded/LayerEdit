@@ -68,7 +68,17 @@ switch current_tool
 	case TOOL.MANIPULATE_OBJECT:
 	{
 		var _sidebar_title = "Manipulation Tool"
-		var _sidebar_description = "Move, rotate, and scale tiles.\n\nArrow keys :3 :3 :3"
+		
+		var _mode_instruct = "Select a tool to view instructions."
+		
+		if current_tool_manipulate == MANIPULATE_TOOL.MOVE
+			_mode_instruct = "Move with the Arrow Keys"
+		else if current_tool_manipulate == MANIPULATE_TOOL.ROTATE
+			_mode_instruct = "Rotate with the left and right arrow keys"
+		else if current_tool_manipulate == MANIPULATE_TOOL.SCALE
+			_mode_instruct = "Scale with the Arrow Keys"
+		
+		var _sidebar_description = "Move, rotate, and scale tiles.\n\n" + _mode_instruct
 		
 		#region draw tools
 
