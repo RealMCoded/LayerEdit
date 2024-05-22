@@ -13,13 +13,31 @@ function save_level(_data)
 		
 		if array_contains(editor.tiles, _tile.object_index) //check if its a valid object and save it.
 		{
+			//Getting instance variables
+			var _vars = array_create(0)
+			var _instVars = variable_instance_get_names(_tile);
+			
+			show_debug_message(_instVars)
+
+			if array_length(_instVars) > 0
+			{
+				for (var j = 0; j < array_length(_instVars); j++)
+				{
+					_vars[j] = {
+						name: _instVars[j],
+						value: variable_instance_get(_tile, _instVars[j])
+					}
+				}
+			}
+			
 			var _myTile = {
 				tile: object_get_name(_tile.object_index),
 				x: _tile.x,
 				y: _tile.y,
 				rotation: _tile.image_angle,
 				xscale: _tile.image_xscale,
-				yscale: _tile.image_yscale
+				yscale: _tile.image_yscale,
+				vars: _vars
 			}
 			
 			array_push(_level.tiles, _myTile)
@@ -47,7 +65,6 @@ function load_level(_file)
 	editor.current_level = _data.level_info
 	
 	//loading tiles
-	
 	var _instance_count = array_length(_data.tiles)
 	
 	for(var i=0; i < _instance_count; i++)
@@ -55,11 +72,18 @@ function load_level(_file)
 		var _tile = _data.tiles[i]
 		var obj = asset_get_index(_tile.tile)
 		
-		instance_create_layer(_tile.x, _tile.y, LEVEL_LAYER, obj, {
+		var _newTile = instance_create_layer(_tile.x, _tile.y, LEVEL_LAYER, obj, {
 			image_angle: _tile.rotation,
 			image_xscale: _tile.xscale,
 			image_yscale: _tile.yscale
 		})
+		
+		var custom_vars = _tile.vars
+		
+		for(var j=0; j < array_length(custom_vars); j++)
+		{
+			_newTile[$ custom_vars[j].name] = custom_vars[j].value 
+		}
 	}
 }
 
