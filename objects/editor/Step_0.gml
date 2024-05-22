@@ -126,7 +126,10 @@ else
 			if !instance_exists(EDITOR_player_spawn)
 				show_message("You need to place a player spawn point!")
 			else
+			{
 				save_level(current_level)
+				show_message("Your level was saved.")
+			}
 		}
 		
 		if point_in_rectangle(window_mouse_x, window_mouse_y, 464, 16, 464+50, 82) //Button 8 - Option Load
@@ -140,9 +143,15 @@ else
 					instance_destroy()
 				}
 				
-				load_level(_file)
-				room_width = current_level.width
-				room_height = current_level.height
+				try {
+					load_level(_file)
+					room_width = current_level.width
+					room_height = current_level.height
+				} catch(e)
+				{
+					show_debug_message($"Something bad happened. {e.longMessage}")
+					show_message($"Error loading level.\n\n{e.message}")
+				}
 			}
 		}
 		

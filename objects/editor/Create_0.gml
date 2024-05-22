@@ -5,7 +5,21 @@ gridsnap = 16
 tiles = [
 	EDITOR_player_spawn,
 	EDITOR_ground_tile,
-	EDITOR_box
+	EDITOR_box,
+	EDITOR_explosive,
+	EDITOR_jumpPad,
+	EDITOR_spike
+]
+
+backgrounds = [
+	spr_bg_tile_0,
+	spr_bg_tile_1,
+	spr_bg_tile_2,
+	spr_bg_tile_5,
+	spr_bg_tile_6,
+	spr_bg_tile_7,
+	spr_bg_tile_8,
+	spr_bg_tile_9,
 ]
 
 tiles_locale = [
@@ -32,7 +46,7 @@ current_level = {
 	name: $"Unamed Level {_date} {_time}",
 	creator: "Layerformer Player",
 	background: 0,
-	backgroundcolor: make_color_hsv(255, 255, 255)
+	backgroundcolor: make_color_hsv(180, 50, 255)
 }
 
 camera_mouse_x = -1
