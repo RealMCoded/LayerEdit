@@ -25,7 +25,10 @@ backgrounds = [
 tiles_locale = [
 	"Player Spawn",
 	"Ground Tile",
-	"Box"
+	"Box",
+	"Explosive",
+	"Jump Pad",
+	"Spike"
 ]
 
 tool_edit_selected_tile = tiles[1]

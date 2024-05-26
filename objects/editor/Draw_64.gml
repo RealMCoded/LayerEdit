@@ -7,9 +7,10 @@ draw_sprite_ext(spr_hud, 0, 0, 0, 18.28, 1.96, 0, c_white, 1)
 
 for(var i=0; i < 10; i++)
 {
+	//draw_sprite_ext(spr_hud_btn, 0, 8+16 + (i * 64), 8+16, 0.78125, 0.78125, 0, c_white, 1)
 	draw_sprite_ext(spr_hud, 0, 16 + (i * 64), 16, 1.3, 1.3, 0, c_white, 1)
 	draw_sprite(spr_tools, i, 32 + (i * 64), 32)
-	draw_text(16 + (i * 64), 16, 16 + (i * 64))
+	//draw_text(16 + (i * 64), 16, 16 + (i * 64))
 }
 
 #endregion
@@ -149,5 +150,5 @@ draw_text_ext(_originX+8, 64 + 6, _sidebar_description, 16, 7 * 50)
 
 #endregion
 
-draw_text(8, 8, instance_count)
+//draw_text(8, 8, instance_count)
 gpu_set_tex_mip_filter(tf_point)
