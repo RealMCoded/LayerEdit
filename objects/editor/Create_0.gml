@@ -50,7 +50,7 @@ current_level = {
 	creator: "a Layerformer Player",
 	description: "A very cool level",
 	background: 0,
-	backgroundcolor: make_color_hsv(180, 50, 255)
+	backgroundcolor: #7FFFFF //REPLACE WITH MAKE_COLOR_HSV
 }
 
 camera_mouse_x = -1
