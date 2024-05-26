@@ -1,7 +1,7 @@
 //EDITOR MACROS
-#macro INSTANCE_CAP 2000
+#macro INSTANCE_CAP 2002 //Cap + 2 because of the editor and camera objects
 #macro SIZE_CAP 16000
-#macro TARGET_GAME_VERSION "X.X.X"
+#macro TARGET_GAME_VERSION "0.6.0"
 #macro version "0.1.0"
 #macro buildDate date_date_string(GM_build_date) + " " + date_time_string(GM_build_date) //Do not change
 

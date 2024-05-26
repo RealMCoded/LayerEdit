@@ -157,7 +157,7 @@ else
 		
 		if point_in_rectangle(window_mouse_x, window_mouse_y, 528, 16, 528+50, 82) //Button 9 - Option Test
 		{
-			
+			show_message("The ability to test levels will release later.")
 		}
 		
 		if point_in_rectangle(window_mouse_x, window_mouse_y, 592, 16, 592+50, 82) //Button 10 - Option Help
