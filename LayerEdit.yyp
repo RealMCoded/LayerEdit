@@ -35,6 +35,7 @@
     {"id":{"name":"EDITOR_explosive","path":"objects/EDITOR_explosive/EDITOR_explosive.yy",},},
     {"id":{"name":"EDITOR_ground_tile","path":"objects/EDITOR_ground_tile/EDITOR_ground_tile.yy",},},
     {"id":{"name":"EDITOR_jumpPad","path":"objects/EDITOR_jumpPad/EDITOR_jumpPad.yy",},},
+    {"id":{"name":"EDITOR_laser","path":"objects/EDITOR_laser/EDITOR_laser.yy",},},
     {"id":{"name":"EDITOR_player_spawn","path":"objects/EDITOR_player_spawn/EDITOR_player_spawn.yy",},},
     {"id":{"name":"EDITOR_spike","path":"objects/EDITOR_spike/EDITOR_spike.yy",},},
     {"id":{"name":"editor","path":"objects/editor/editor.yy",},},

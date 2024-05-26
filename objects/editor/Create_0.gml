@@ -9,7 +9,8 @@ tiles = [
 	EDITOR_box,
 	EDITOR_explosive,
 	EDITOR_jumpPad,
-	EDITOR_spike
+	EDITOR_spike,
+	EDITOR_laser
 ]
 
 backgrounds = [
@@ -30,7 +31,8 @@ tiles_locale = [
 	"Box",
 	"Explosive",
 	"Jump Pad",
-	"Spike"
+	"Spike",
+	"Laser"
 ]
 
 tool_edit_selected_tile = tiles[1]
