@@ -43,8 +43,9 @@ var _time = string_replace_all(date_time_string(date_current_datetime()), ":", "
 current_level = {
 	width: 320,
 	height: 240,
-	name: $"Unamed Level {_date} {_time}",
-	creator: "Layerformer Player",
+	name: $"Untitled {_date} {_time}",
+	creator: "a Layerformer Player",
+	description: "A very cool level",
 	background: 0,
 	backgroundcolor: make_color_hsv(180, 50, 255)
 }
