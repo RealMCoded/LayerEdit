@@ -47,6 +47,9 @@ function save_level(_data)
 	var _file_name = generateLevelFileName(_level.level_info.name)
 	directory_create($"{LAYERFORMER_LEVEL_DIR}\\{_file_name}")
 	
+	if !file_exists($"{LAYERFORMER_LEVEL_DIR}\\{_file_name}\\icon.png")
+		file_copy("./DefaultLevelIcon.png", $"{LAYERFORMER_LEVEL_DIR}\\{_file_name}\\icon.png")
+	
 	var _string = json_stringify(_level)
 	var _buffer = buffer_create(string_byte_length(_string)+1, buffer_fixed, 1)
 	buffer_write(_buffer, buffer_string, _string)
