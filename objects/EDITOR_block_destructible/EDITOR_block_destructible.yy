@@ -1,9 +1,9 @@
 {
   "$GMObject":"",
-  "%Name":"EDITOR_jumpPad",
+  "%Name":"EDITOR_block_destructible",
   "eventList":[],
   "managed":true,
-  "name":"EDITOR_jumpPad",
+  "name":"EDITOR_block_destructible",
   "overriddenProperties":[],
   "parent":{
     "name":"Editor Tiles",
@@ -23,15 +23,13 @@
   "physicsShape":1,
   "physicsShapePoints":[],
   "physicsStartAwake":true,
-  "properties":[
-    {"$GMObjectProperty":"v1","%Name":"jump_height","filters":[],"listItems":[],"multiselect":false,"name":"jump_height","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"7","varType":0,},
-  ],
+  "properties":[],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_editor_jumpPad",
-    "path":"sprites/spr_editor_jumpPad/spr_editor_jumpPad.yy",
+    "name":"spr_editor_block_destructible",
+    "path":"sprites/spr_editor_block_destructible/spr_editor_block_destructible.yy",
   },
   "spriteMaskId":null,
   "visible":true,

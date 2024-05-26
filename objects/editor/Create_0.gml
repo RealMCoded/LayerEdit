@@ -5,6 +5,7 @@ gridsnap = 16
 tiles = [
 	EDITOR_player_spawn,
 	EDITOR_ground_tile,
+	EDITOR_block_destructible,
 	EDITOR_box,
 	EDITOR_explosive,
 	EDITOR_jumpPad,
@@ -25,6 +26,7 @@ backgrounds = [
 tiles_locale = [
 	"Player Spawn",
 	"Ground Tile",
+	"Destructible Ground",
 	"Box",
 	"Explosive",
 	"Jump Pad",
