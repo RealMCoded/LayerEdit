@@ -6,6 +6,7 @@ tiles = [
 	EDITOR_player_spawn,
 	EDITOR_ground_tile,
 	EDITOR_block_destructible,
+	EDITOR_unstable_platform,
 	EDITOR_box,
 	EDITOR_explosive,
 	EDITOR_jumpPad,
