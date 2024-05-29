@@ -16,8 +16,6 @@ function save_level(_data)
 			//Getting instance variables
 			var _vars = array_create(0)
 			var _instVars = variable_instance_get_names(_tile);
-			
-			show_debug_message(_instVars)
 
 			if array_length(_instVars) > 0
 			{

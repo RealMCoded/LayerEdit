@@ -72,7 +72,7 @@ if mouse_in_editor
 			}
 		}
 	}
-	else if current_tool == TOOL.MANIPULATE_OBJECT
+	else if current_tool == TOOL.MANIPULATE_OBJECT or current_tool == TOOL.CONFIGURE
 	{
 		if mouse_check_button_pressed(mb_left)
 		{

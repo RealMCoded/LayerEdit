@@ -124,6 +124,36 @@ switch current_tool
 	{
 		var _sidebar_title = "Tile Edit Tool"
 		var _sidebar_description = "Click on a tile to configure it."
+		
+		if instance_exists(tool_config_selected_tile)
+		{
+			var _inst = tool_config_selected_tile
+			var _name = string_replace_all(object_get_name(_inst.object_index), "EDITOR_", "")
+			_name = string_replace_all(_name, "_", " ")
+			
+			draw_text_ext(_originX+8, 128, $"{_name}\nid {_inst.id}", 16, 7 * 50)
+			
+			#region Drawing variables
+			var _instVars = variable_instance_get_names(_inst);
+
+			if array_length(_instVars) > 0
+			{
+				for (var j = 0; j < array_length(_instVars); j++)
+				{
+					/*_vars[j] = {
+						name: _instVars[j],
+						value: variable_instance_get(_tile, _instVars[j])
+					}*/
+					draw_text(_originX+8, 192+(j*16), $"{_instVars[j]} : {variable_instance_get(_inst, _instVars[j])}")
+				}
+			} else {
+				draw_text(_originX+8, 158, $"{_name} doesn't have any variables.")
+			}
+			#endregion
+		} else {
+			draw_text_ext(_originX+8, 128, "No instance selected.\nClick on one to select it.", 16, 7 * 50)
+		}
+		
 	} break;
 	
 	case TOOL.CONFIGURE_LEVEL:
