@@ -122,8 +122,8 @@ switch current_tool
 	
 	case TOOL.CONFIGURE:
 	{
-		var _sidebar_title = "Tile Edit Tool"
-		var _sidebar_description = "Click on a tile to configure it."
+		var _sidebar_title = "Tile Config Tool"
+		var _sidebar_description = "Change tile specific variables"
 		
 		if instance_exists(tool_config_selected_tile)
 		{
