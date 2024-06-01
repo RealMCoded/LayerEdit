@@ -45,7 +45,6 @@ current_tool = TOOL.EDIT
 current_tool_manipulate = MANIPULATE_TOOL.MOVE
 
 var _date = string_replace_all(date_date_string(date_current_datetime()), "/", "-")
-
 var _time = string_replace_all(date_time_string(date_current_datetime()), ":", ".")
 
 current_level = {
@@ -55,7 +54,8 @@ current_level = {
 	creator: "a Layerformer Player",
 	description: "A very cool level",
 	background: 0,
-	backgroundcolor: #7FFFFF //REPLACE WITH MAKE_COLOR_HSV
+	backgroundcolor: #7FFFFF, //REPLACE WITH MAKE_COLOR_RGB
+	tilesetcolor: #7FFFFF //REPLACE WITH MAKE_COLOR_RGB
 }
 
 camera_mouse_x = -1
