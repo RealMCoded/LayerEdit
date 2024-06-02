@@ -165,9 +165,23 @@ switch current_tool
 							draw_text(_originX+8, 192+(j*48), $"{_instVars[j]}\n{_myvar}")
 							
 							//mouse click
-							if point_in_rectangle(window_mouse_x, window_mouse_y, _originX, 186+(j*48), _originX + _text_width, 186+(j*32)+32) && mouse_check_button_pressed(mb_left)
+							if point_in_rectangle(window_mouse_x, window_mouse_y, _originX, 186+(j*48), _originX + _text_width, 186+(j*48)+32) && mouse_check_button_pressed(mb_left)
 							{
 								variable_instance_set(_inst, _instVars[j], get_string($"Edit variable {_instVars[j]}", _myvar))
+							}
+						} break;
+						
+						case "number":
+						{
+							var _text_width = string_width($"{_instVars[j]} = {_myvar}")
+							
+							draw_sprite_ext(spr_hud_btn_9slice, 0, _originX+6, 186+(j*48), _text_width/64, 0.5, 0, c_white, 1)
+							draw_text(_originX+8, 192+(j*48), $"{_instVars[j]} = {_myvar}")
+							
+							//mouse click
+							if point_in_rectangle(window_mouse_x, window_mouse_y, _originX, 186+(j*48), _originX + _text_width, 186+(j*48)+32) && mouse_check_button_pressed(mb_left)
+							{
+								variable_instance_set(_inst, _instVars[j], get_integer($"Edit variable {_instVars[j]}", _myvar))
 							}
 						} break;
 						
