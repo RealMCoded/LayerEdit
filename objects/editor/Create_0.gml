@@ -11,7 +11,8 @@ tiles = [
 	EDITOR_explosive,
 	EDITOR_jumpPad,
 	EDITOR_spike,
-	EDITOR_laser
+	EDITOR_laser,
+	//EDITOR_DebugInstance
 ]
 
 backgrounds = [

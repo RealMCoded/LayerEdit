@@ -146,24 +146,36 @@ switch current_tool
 					{
 						case "bool":
 						{
-							draw_text(_originX+8, 192+(j*32), _instVars[j])
-							draw_sprite_ext(spr_hud_btn, 0, _originX + string_width($"{_instVars[j]}") + 16, 186+(j*32), 0.5, 0.5, 0, c_white, 1)
-							if _myvar draw_sprite(spr_check, 0, _originX + string_width($"{_instVars[j]}") + 16, 186+(j*32))
+							draw_text(_originX+8, 192+(j*48), _instVars[j])
+							draw_sprite_ext(spr_hud_btn, 0, _originX + string_width($"{_instVars[j]}") + 16, 186+(j*48), 0.5, 0.5, 0, c_white, 1)
+							if _myvar draw_sprite(spr_check, 0, _originX + string_width($"{_instVars[j]}") + 16, 186+(j*48))
 							
 							//mouse click
-							if point_in_rectangle(window_mouse_x, window_mouse_y, _originX + string_width($"{_instVars[j]}") + 16, 186+(j*32), _originX + string_width($"{_instVars[j]}") + 48, 186+(j*32)+32) && mouse_check_button_pressed(mb_left)
+							if point_in_rectangle(window_mouse_x, window_mouse_y, _originX + string_width($"{_instVars[j]}") + 16, 186+(j*48), _originX + string_width($"{_instVars[j]}") + 48, 186+(j*48)+32) && mouse_check_button_pressed(mb_left)
 							{
 								variable_instance_set(_inst, _instVars[j], !_myvar)
 							}
 						} break;
 						
+						case "string":
+						{
+							var _text_width = max(string_width(_instVars[j]), string_width(_myvar))
+							
+							draw_sprite_ext(spr_hud_btn_9slice, 0, _originX+6, 186+(j*48), _text_width/64, 0.75, 0, c_white, 1)
+							draw_text(_originX+8, 192+(j*48), $"{_instVars[j]}\n{_myvar}")
+							
+							//mouse click
+							if point_in_rectangle(window_mouse_x, window_mouse_y, _originX, 186+(j*48), _originX + _text_width, 186+(j*32)+32) && mouse_check_button_pressed(mb_left)
+							{
+								variable_instance_set(_inst, _instVars[j], get_string($"Edit variable {_instVars[j]}", _myvar))
+							}
+						} break;
+						
 						default:
 						{
-							draw_text(_originX+8, 192+(j*16), $"{_instVars[j]} : {variable_instance_get(_inst, _instVars[j])} [??? / {typeof(variable_instance_get(_inst, _instVars[j]))}]")
+							draw_text(_originX+8, 192+(j*48), $"{_instVars[j]} : {variable_instance_get(_inst, _instVars[j])} [??? / {typeof(variable_instance_get(_inst, _instVars[j]))}]")
 						} break;
 					}
-					
-					//draw_text(_originX+8, 192+(j*16), $"{_instVars[j]} : {variable_instance_get(_inst, _instVars[j])} [{typeof(variable_instance_get(_inst, _instVars[j]))}]")
 				}
 			} else {
 				draw_text(_originX+8, 158, $"{_name} doesn't have any variables.")
