@@ -128,7 +128,7 @@ else
 			else
 			{
 				save_level(current_level)
-				show_message("Your level was saved.")
+				show_message($"Your level was saved as \"{current_level.name}\".")
 			}
 		}
 		
