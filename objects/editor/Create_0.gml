@@ -11,8 +11,7 @@ tiles = [
 	EDITOR_explosive,
 	EDITOR_jumpPad,
 	EDITOR_spike,
-	EDITOR_laser,
-	//EDITOR_DebugInstance
+	EDITOR_laser
 ]
 
 backgrounds = [
@@ -65,3 +64,9 @@ camera_zoom = 1
 camera_mouse_drag = false
 
 camera_set_view_pos(view_camera[0], -room_width, -room_height)
+
+if debug_mode
+{
+	array_push(tiles, EDITOR_DebugInstance)
+	array_push(tiles_locale, "Debug Tile for Debugging")
+}
