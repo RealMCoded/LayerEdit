@@ -16,7 +16,7 @@ for(var i=0; i < 10; i++)
 #endregion
 
 #region Sidebar
-var _originX = 928+8
+var _originX = 936
 var _sidebar_title = "Sidebar"
 var _sidebar_description = "Sidebar descriptions can be quite long, but please keep them short!"
 
@@ -205,6 +205,46 @@ switch current_tool
 	{
 		var _sidebar_title = "Configure Level"
 		var _sidebar_description = "Configure your level."
+			
+		#region Level Size
+			
+		draw_text(_originX+8, 128, "Room Size")
+		
+		draw_sprite_ext(spr_hud_btn_9slice, 0, _originX+6, 160, 1.05, 0.5, 0, c_white, 1)
+		draw_sprite_ext(spr_hud_btn_9slice, 0, _originX+96, 160, 1.05, 0.5, 0, c_white, 1)
+		
+		draw_text( _originX+12, 160+7, current_level.width)
+		draw_text(_originX+80, 160+7, "X")
+		draw_text( _originX+102, 160+7, current_level.height)
+		
+		//Width Button
+		if point_in_rectangle(window_mouse_x, window_mouse_y, _originX+6, 160, (_originX+6)*1.05, 240 ) && mouse_check_button_pressed(mb_left)
+		{
+			var _input = get_integer("Set Level Width", current_level.width)
+			
+			if _input > SIZE_CAP or _input <= 31
+				return show_message($"The size \"{_input}\" is invalid.")
+			
+			current_level.width = _input
+			room_width = _input
+		}
+		
+		//Height Button
+		if point_in_rectangle(window_mouse_x, window_mouse_y, _originX+96, 160, (_originX+96)*1.05, 240) && mouse_check_button_pressed(mb_left)
+		{
+			var _input = get_integer("Set Level Height", current_level.height)
+			
+			if _input > SIZE_CAP or _input <= 31
+				return show_message($"The size \"{_input}\" is invalid.")
+			
+			current_level.height = _input
+			room_height = _input
+		}
+		#endregion
+		
+		#region Level Info
+		
+		#endregion
 	} break;
 	
 	case TOOL.HELP_MENU:
