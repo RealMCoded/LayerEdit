@@ -218,7 +218,7 @@ switch current_tool
 		draw_text( _originX+102, 160+7, current_level.height)
 		
 		//Width Button
-		if point_in_rectangle(window_mouse_x, window_mouse_y, _originX+6, 160, (_originX+6)*1.05, 240 ) && mouse_check_button_pressed(mb_left)
+		if point_in_rectangle(window_mouse_x, window_mouse_y, _originX+6, 160, (_originX+6)*1.05, 184 ) && mouse_check_button_pressed(mb_left)
 		{
 			var _input = get_integer("Set Level Width", current_level.width)
 			
@@ -230,7 +230,7 @@ switch current_tool
 		}
 		
 		//Height Button
-		if point_in_rectangle(window_mouse_x, window_mouse_y, _originX+96, 160, (_originX+96)*1.05, 240) && mouse_check_button_pressed(mb_left)
+		if point_in_rectangle(window_mouse_x, window_mouse_y, _originX+96, 160, (_originX+96)*1.05, 184) && mouse_check_button_pressed(mb_left)
 		{
 			var _input = get_integer("Set Level Height", current_level.height)
 			
@@ -243,7 +243,36 @@ switch current_tool
 		#endregion
 		
 		#region Level Info
-		
+			
+			#region Level Name
+			draw_text(_originX+8, 208, "Level Name")
+			
+			var _text_width = string_width(current_level.name)
+							
+			draw_sprite_ext(spr_hud_btn_9slice, 0, _originX+6, 232, _text_width/64, 0.5, 0, c_white, 1)
+			draw_text(_originX+8, 240, current_level.name)
+							
+			//mouse click
+			if point_in_rectangle(window_mouse_x, window_mouse_y, _originX, 232, _originX + _text_width, 232 + 32) && mouse_check_button_pressed(mb_left)
+			{
+				var _input = get_string($"Edit Level Name", current_level.name)
+				
+				if string_length(_input) < 3
+					show_message($"The name \"{_input}\" is too short!\nLevel names must be between 3 - 32 characters.")
+				else if string_length(_input) > 32
+					show_message($"The name \"{_input}\" is too long!\nLevel names must be between 3 - 32 characters. (You are over by {string_length(_input) - 32})")
+				else
+					current_level.name = _input
+			}
+			#endregion
+			
+			#region Level Creator
+			
+			#endregion
+			
+			#region Level Bio
+			#endregion
+			
 		#endregion
 	} break;
 	
