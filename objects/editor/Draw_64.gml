@@ -269,15 +269,15 @@ switch current_tool
 			#region Level Creator
 			draw_text(_originX+8, 248, "Creator")
 			
-			/*var _text_width = string_width(current_level.creator)
+			var _text_width = string_width(current_level.creator)
 							
-			draw_sprite_ext(spr_hud_btn_9slice, 0, _originX+6, 232, _text_width/64, 0.5, 0, c_white, 1)
-			draw_text(_originX+8, 240, current_level.creator)
+			draw_sprite_ext(spr_hud_btn_9slice, 0, _originX+6, 272, _text_width/64, 0.5, 0, c_white, 1)
+			draw_text(_originX+8, 280, current_level.creator)
 							
 			//mouse click
-			if point_in_rectangle(window_mouse_x, window_mouse_y, _originX, 232, _originX + _text_width, 232 + 32) && mouse_check_button_pressed(mb_left)
+			if point_in_rectangle(window_mouse_x, window_mouse_y, _originX, 272, _originX + _text_width, 304) && mouse_check_button_pressed(mb_left)
 			{
-				var _input = get_string($"Edit Creator Name", current_level.creator)
+				var _input = get_string($"Edit Level Creator (must be between 3 - 32 characters)", current_level.creator)
 				
 				if string_length(_input) < 3
 					show_message($"The name \"{_input}\" is too short!\nLevel names must be between 3 - 32 characters.")
@@ -285,7 +285,7 @@ switch current_tool
 					show_message($"The name \"{_input}\" is too long!\nLevel names must be between 3 - 32 characters. (You are over by {string_length(_input) - 32})")
 				else
 					current_level.creator = _input
-			}*/
+			}
 			#endregion
 			
 			#region Level Bio
