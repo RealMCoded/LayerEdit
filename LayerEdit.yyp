@@ -25,7 +25,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.4.1.152",
+    "IDEVersion":"2024.6.0.157",
   },
   "name":"LayerEdit",
   "resources":[
@@ -57,10 +57,6 @@
     {"id":{"name":"spr_bg_tile_8","path":"sprites/spr_bg_tile_8/spr_bg_tile_8.yy",},},
     {"id":{"name":"spr_bg_tile_9","path":"sprites/spr_bg_tile_9/spr_bg_tile_9.yy",},},
     {"id":{"name":"spr_check","path":"sprites/spr_check/spr_check.yy",},},
-    {"id":{"name":"spr_cursor_config","path":"sprites/spr_cursor_config/spr_cursor_config.yy",},},
-    {"id":{"name":"spr_cursor_delete","path":"sprites/spr_cursor_delete/spr_cursor_delete.yy",},},
-    {"id":{"name":"spr_cursor_hand","path":"sprites/spr_cursor_hand/spr_cursor_hand.yy",},},
-    {"id":{"name":"spr_cursor_place","path":"sprites/spr_cursor_place/spr_cursor_place.yy",},},
     {"id":{"name":"spr_editor_block_destructible","path":"sprites/spr_editor_block_destructible/spr_editor_block_destructible.yy",},},
     {"id":{"name":"spr_editor_box","path":"sprites/spr_editor_box/spr_editor_box.yy",},},
     {"id":{"name":"spr_editor_explosive","path":"sprites/spr_editor_explosive/spr_editor_explosive.yy",},},

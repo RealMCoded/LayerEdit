@@ -41,6 +41,7 @@ tool_config_selected_tile = noone
 
 mouse_in_editor = false
 
+//current_tool = TOOL.EDIT
 current_tool = TOOL.EDIT
 current_tool_manipulate = MANIPULATE_TOOL.MOVE
 
