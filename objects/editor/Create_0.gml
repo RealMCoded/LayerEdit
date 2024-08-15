@@ -18,11 +18,13 @@ backgrounds = [
 	spr_bg_tile_0,
 	spr_bg_tile_1,
 	spr_bg_tile_2,
+	spr_bg_tile_3,
+	spr_bg_tile_4,
 	spr_bg_tile_5,
 	spr_bg_tile_6,
 	spr_bg_tile_7,
 	spr_bg_tile_8,
-	spr_bg_tile_9,
+	spr_bg_tile_9
 ]
 
 tiles_locale = [

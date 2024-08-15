@@ -25,7 +25,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.6.0.157",
+    "IDEVersion":"2024.6.2.162",
   },
   "name":"LayerEdit",
   "resources":[
@@ -51,6 +51,8 @@
     {"id":{"name":"spr_bg_tile_0","path":"sprites/spr_bg_tile_0/spr_bg_tile_0.yy",},},
     {"id":{"name":"spr_bg_tile_1","path":"sprites/spr_bg_tile_1/spr_bg_tile_1.yy",},},
     {"id":{"name":"spr_bg_tile_2","path":"sprites/spr_bg_tile_2/spr_bg_tile_2.yy",},},
+    {"id":{"name":"spr_bg_tile_3","path":"sprites/spr_bg_tile_3/spr_bg_tile_3.yy",},},
+    {"id":{"name":"spr_bg_tile_4","path":"sprites/spr_bg_tile_4/spr_bg_tile_4.yy",},},
     {"id":{"name":"spr_bg_tile_5","path":"sprites/spr_bg_tile_5/spr_bg_tile_5.yy",},},
     {"id":{"name":"spr_bg_tile_6","path":"sprites/spr_bg_tile_6/spr_bg_tile_6.yy",},},
     {"id":{"name":"spr_bg_tile_7","path":"sprites/spr_bg_tile_7/spr_bg_tile_7.yy",},},
