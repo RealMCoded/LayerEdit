@@ -68,7 +68,7 @@ switch current_tool
 	
 	case TOOL.MANIPULATE_OBJECT:
 	{
-		var _sidebar_title = "Manipulation Tool"
+		var _sidebar_title = "Multi Tool"
 		
 		var _mode_instruct = "Select a tool to view instructions."
 		
