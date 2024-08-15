@@ -306,7 +306,8 @@ switch current_tool
 	break;
 }
 
-draw_text_transformed(_originX+8, 8, _sidebar_title, 2, 2, 0)
+draw_sprite_ext(spr_tools, current_tool, _originX+8, 12, 1, 1, 0, c_white, 1)
+draw_text_transformed(_originX+48, 8, _sidebar_title, 2, 2, 0)
 draw_line_width_color(_originX+16, 64-8, 1280-20, 64-8, 1, c_black, c_black)
 draw_text_ext(_originX+8, 64 + 6, _sidebar_description, 16, 7 * 50)
 
