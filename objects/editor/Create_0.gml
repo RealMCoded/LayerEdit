@@ -52,11 +52,12 @@ var _date = string_replace_all(date_date_string(date_current_datetime()), "/", "
 var _time = string_replace_all(date_time_string(date_current_datetime()), ":", ".")
 
 current_level = {
-	width: 320,
-	height: 240,
 	name: $"Untitled {_date} {_time}",
 	creator: "a Layerformer Player",
 	description: "A very cool level",
+	format_version: file_version,
+	width: 320,
+	height: 240,
 	background: 0,
 	backgroundcolor: #7FFFFF, //REPLACE WITH MAKE_COLOR_RGB
 	tilesetcolor: #7FFFFF //REPLACE WITH MAKE_COLOR_RGB
