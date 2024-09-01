@@ -27,6 +27,7 @@ function draw_item_select()
 	var seperate = 1.25
 	var rows = 4
 	
+	//Render Items
 	for(var i=0; i < array_length(tiles); i++)
 	{
 		var renderX = 64*((i%rows)*seperate)
@@ -36,10 +37,20 @@ function draw_item_select()
 		draw_sprite(spr_hud_btn, tiles[i] == tool_edit_selected_tile, 928+16+renderX, 136+renderY)
 		
 		draw_sprite_ext(_objSprite, 0, 928+32+renderX+(sprite_get_xoffset(_objSprite)*2), 136+16+renderY+(sprite_get_yoffset(_objSprite)*2), 2, 2, 0, c_white, 1)
+	}
+	
+	//Hover text renderer
+	for(var i=0; i < array_length(tiles); i++)
+	{
+		var renderX = 64*((i%rows)*seperate)
+		var renderY = 64*(floor(i/rows)*seperate)
 		
-		if mouse_check_button_pressed(mb_left) and point_in_rectangle(window_mouse_x, window_mouse_y, 928+16+renderX, 136+renderY, 928+16+renderX+64, 136+renderY+64)
+		if point_in_rectangle(window_mouse_x, window_mouse_y, 928+16+renderX, 136+renderY, 928+16+renderX+64, 136+renderY+64)
 		{
-			tool_edit_selected_tile = tiles[i]
+			draw_text(window_mouse_x, window_mouse_y, tiles_locale[i])
+			
+			if mouse_check_button_pressed(mb_left)
+				tool_edit_selected_tile = tiles[i]
 		}
 	}
 }
@@ -128,8 +139,7 @@ switch current_tool
 		if instance_exists(tool_config_selected_tile)
 		{
 			var _inst = tool_config_selected_tile
-			var _name = string_replace_all(object_get_name(_inst.object_index), "EDITOR_", "")
-			_name = string_replace_all(_name, "_", " ")
+			var _name = get_tile_name(_inst.object_index)
 			
 			draw_text_ext(_originX+8, 128, $"{_name}\nid {_inst.id}", 16, 7 * 50)
 			

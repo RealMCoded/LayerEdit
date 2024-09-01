@@ -14,6 +14,18 @@ tiles = [
 	EDITOR_laser
 ]
 
+tiles_locale = [
+	"Player Spawn",
+	"Ground Tile",
+	"Destructible Ground",
+	"Unstable Platform",
+	"Box",
+	"Explosive",
+	"Jump Pad",
+	"Spike",
+	"Laser"
+]
+
 backgrounds = [
 	spr_bg_tile_0,
 	spr_bg_tile_1,
@@ -25,17 +37,6 @@ backgrounds = [
 	spr_bg_tile_7,
 	spr_bg_tile_8,
 	spr_bg_tile_9
-]
-
-tiles_locale = [
-	"Player Spawn",
-	"Ground Tile",
-	"Destructible Ground",
-	"Box",
-	"Explosive",
-	"Jump Pad",
-	"Spike",
-	"Laser"
 ]
 
 tool_edit_selected_tile = tiles[1]
@@ -67,6 +68,23 @@ camera_zoom = 1
 camera_mouse_drag = false
 
 camera_set_view_pos(view_camera[0], -room_width, -room_height)
+
+///@param _tile Object Index (example: _tile.object_index)
+function get_tile_name(_tile)
+{
+	var _name = $"!! {object_get_name(_tile.object_index)} !!" //default string if no translation is located
+	
+	for(var i=0; i < array_length(tiles); i++)
+	{
+		if tiles[i] == _tile.object_index
+		{
+			_name = tiles_locale[i]
+			break;
+		}
+	}
+	
+	return _name
+}
 
 if debug_mode
 {
