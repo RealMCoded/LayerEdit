@@ -1,2 +1,2 @@
 /// @description 
-image_blend = editor.current_level.tilesetcolor
+image_blend = color_array_to_color(editor.current_level.tilesetcolor)
