@@ -121,8 +121,7 @@ switch current_tool
 		if instance_exists(tool_config_selected_tile)
 		{
 			var _inst = tool_config_selected_tile
-			var _name = string_replace_all(object_get_name(_inst.object_index), "EDITOR_", "")
-			_name = string_replace_all(_name, "_", " ")
+			var _name = get_tile_name(_inst.object_index)
 			
 			draw_text_ext(_originX+8, 210, $"{_name}\n\nid {_inst.id}\nx: {_inst.x}\ny: {_inst.y}\nxscale: {_inst.image_xscale}\nyscale: {_inst.image_yscale}\nrotation: {_inst.image_angle}", 16, 7 * 50)
 		} else {
@@ -197,7 +196,7 @@ switch current_tool
 						
 						default:
 						{
-							draw_text(_originX+8, 192+(j*48), $"{_instVars[j]} : {variable_instance_get(_inst, _instVars[j])} [??? / {typeof(variable_instance_get(_inst, _instVars[j]))}]")
+							draw_text(_originX+8, 192+(j*48), $"{_instVars[j]} : {variable_instance_get(_inst, _instVars[j])} [?{typeof(variable_instance_get(_inst, _instVars[j]))}?]")
 						} break;
 					}
 				}
@@ -218,7 +217,7 @@ switch current_tool
 			
 		#region Level Size
 			
-		draw_text(_originX+8, 100, "Room Size")
+		draw_text(_originX+8, 108, "Room Size")
 		
 		draw_sprite_ext(spr_hud_btn_9slice, 0, _originX+6, 132, 1.05, 0.5, 0, c_white, 1)
 		draw_sprite_ext(spr_hud_btn_9slice, 0, _originX+96, 132, 1.05, 0.5, 0, c_white, 1)
