@@ -299,6 +299,27 @@ switch current_tool
 			#endregion
 			
 			#region Level Bio
+			draw_text(_originX+8, 320, "Level Description")
+			
+			var _text_width = string_width(current_level.description)
+			var _text_height = string_height_ext(current_level.description, 16, 320) + 16
+			
+			draw_sprite_ext(spr_hud_btn_9slice, 0, _originX+6, 340, 320/64, _text_height/64, 0, c_white, 1)
+			draw_text_ext(_originX+8, 348, current_level.description, 16, 320)
+			
+			//mouse click
+			if point_in_rectangle(window_mouse_x, window_mouse_y, _originX, 340, _originX + _text_width, 340 + _text_height) && mouse_check_button_pressed(mb_left)
+			{
+				var _input = get_string($"Edit Level Description (must be between 1 - 2000 characters)", current_level.description)
+				
+				if string_length(_input) < 1
+					show_message("The description is too short!\nLevel names must be between 1 - 2000 characters.")
+				else if string_length(_input) > 2000
+					show_message($"The description is too long!\nLevel names must be between 1 - 2000 characters. (You are over by {string_length(_input) - 2000})")
+				else
+					current_level.description = _input
+			}
+			
 			#endregion
 			
 		#endregion
