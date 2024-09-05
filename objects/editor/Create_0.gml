@@ -59,8 +59,8 @@ current_level = {
 	width: 320,
 	height: 240,
 	background: 0,
-	backgroundcolor: #7FFFFF, //REPLACE WITH MAKE_COLOR_RGB
-	tilesetcolor: #7FFFFF //REPLACE WITH MAKE_COLOR_RGB
+	backgroundcolor: [127, 255, 255], //REPLACE WITH MAKE_COLOR_RGB
+	tilesetcolor: [127, 255, 255] //REPLACE WITH MAKE_COLOR_RGB
 }
 
 camera_mouse_x = -1
