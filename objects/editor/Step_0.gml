@@ -121,6 +121,7 @@ else
 			current_tool = TOOL.CONFIGURE_LEVEL
 		}
 		
+		//SAVE LEVEL
 		if point_in_rectangle(window_mouse_x, window_mouse_y, 400, 16, 400+50, 82) //Button 7 - Option Save
 		{
 			if !instance_exists(EDITOR_player_spawn)
@@ -132,6 +133,7 @@ else
 			}
 		}
 		
+		//LOAD LEVEL
 		if point_in_rectangle(window_mouse_x, window_mouse_y, 464, 16, 464+50, 82) //Button 8 - Option Load
 		{
 			var _file = get_open_filename_ext("Layerformer Level (.lf)|*.lf", "", LAYERFORMER_LEVEL_DIR, "Select a Layerformer Level File");
